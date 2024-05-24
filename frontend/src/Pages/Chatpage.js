@@ -5,6 +5,7 @@ const Chatpage = () => {
   const [chats, setChats] = useState([]); //chats to show data , setChats to update value of chats variable
   const fetchChats = async () => {
     const { data } = await axios.get("/api/chat");
+    console.log(data);
     setChats(data);
   };
 
@@ -15,6 +16,7 @@ const Chatpage = () => {
   // return <div>{chats.map()}</div>;
   return (
     <div>
+      
       {chats.map((chat) => (
         <div key={chat._id}> {chat.chatName} </div> //in rjs when using map you are supposed to give key to every child element (wihtin div)
       ))}
