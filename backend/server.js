@@ -21,6 +21,6 @@ app.get("/api/chat/:id", (req, res) => {
   res.send(singleChat);
 });
 
-const PORT = process.env.PORT || 5000; //to hide port
+const PORT = process.env.PORT || 2000; //to hide port
 
 app.listen(PORT, console.log(`Server Started on PORT ${PORT}`));

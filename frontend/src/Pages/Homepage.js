@@ -1,7 +1,12 @@
 import React from "react";
+import { Conatiner, Box } from "@chakra-ui/react";
 
 const Homepage = () => {
-  return <div>Home</div>;
+  return (
+    <Container maxW="xl" centerContent>
+      <Box></Box>
+    </Container>
+  );
 };
 
 export default Homepage;
