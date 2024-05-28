@@ -3,6 +3,7 @@ const dotenv = require("dotenv"); //to hide port
 const { chats } = require("./data/data"); //uses destructuring assignment to import a specific property (chats) from a module
 const connectDB = require("./config/db");
 const userRoutes = require("./routes/userRoutes");
+const { notFound, errorHandler } = require("./middleware/errorMiddleware");
 
 dotenv.config(); //to hide port
 
@@ -16,6 +17,10 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/user", userRoutes);
+app.use("/api/user/login", userRoutes);
+
+app.use(notFound);
+app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000; //to hide port
 
